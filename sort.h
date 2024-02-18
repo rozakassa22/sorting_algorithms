@@ -1,9 +1,17 @@
 #ifndef SORT_H
 #define SORT_H
 
-#include <stdio.h>
+#include <stddef.h>
+#include <stdbool.h>
 
-/* Doubly linked list structure */
+/**
+ * struct listint_s - Doubly linked list node structure
+ * @n: Integer stored in the node
+ * @prev: Pointer to the previous element of the list
+ * @next: Pointer to the next element of the list
+ *
+ * Description: Doubly linked list node structure
+ */
 typedef struct listint_s
 {
     int n;
@@ -12,9 +20,10 @@ typedef struct listint_s
 } listint_t;
 
 /* Function prototypes */
+void swap_nodes(listint_t **h, listint_t **n1, listint_t *n2);
 void insertion_sort_list(listint_t **list);
+
 void bubble_sort(int *array, size_t size);
-void print_array(const int *array, size_t size);
-void print_list(const listint_t *list);
+void swap_ints(int *a, int *b);
 
 #endif /* SORT_H */
